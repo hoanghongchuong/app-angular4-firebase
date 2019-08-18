@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import {Employee} from './employee.model';
-import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class EmployeeService {
   employeeList: AngularFireList<any>;
   selectedEmployee: Employee = new Employee();
-
   constructor(private firebase: AngularFireDatabase) { }
 
   getData() {

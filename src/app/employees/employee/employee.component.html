@@ -2,11 +2,11 @@
   <input type="hidden" name="$key">
   <div class="form-group">
     <label>Name</label>
-    <input class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Name" ngModel>
+    <input class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Name" ngModel required>
   </div>
   <div class="form-group">
     <label for="">Phone</label>
-    <input class="form-control" name="phone" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone" ngModel>
+    <input class="form-control" name="phone" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone" ngModel required>
   </div>
   <div class="form-group">
     <label for="">Email</label>
@@ -22,7 +22,7 @@
   </div>
 
   <div class="form-group">
-    <button type="submit" class="btn btn-default">
+    <button type="submit" class="btn btn-default" [disabled]="!employeeForm.valid">
       <i class="fa fa-floppy-o"></i> Submit</button>
     <button type="button" class="btn btn-default">
       <i class="fa fa-trash"></i> Delete</button>
@@ -30,3 +30,4 @@
       <i class="fa fa-repeat"></i> Reset</button>
   </div>
 </form>
+
